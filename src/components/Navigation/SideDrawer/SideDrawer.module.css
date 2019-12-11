@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+
+.SideDrawer {
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  top: 56px;
+  right: 0;
+  z-index: 80;
+  background-color: #0070a0;
+  padding: 32px 16px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-out;
+  font-size: 20px;
+}
+
+@media (min-width: 500px) {
+  .SideDrawer {
+    display: none;
+  }
+}
+
+.Open {
+  transform: translateX(0);
+}
+
+.Close {
+  transform: translateX(100%);
+}
+
+.Title {
+  height: 10%;
+  margin-bottom: 10px;
+  font-size: 32px;
+  padding: 20px;
+  color: #fff;
+  font-family: 'Russo One', sans-serif;
+  letter-spacing: 2px;
+}
