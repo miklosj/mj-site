@@ -23,7 +23,7 @@
   color: #fff;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 650px) {
   .NavigationItem {
     margin: 0;
     display: flex;
@@ -50,10 +50,10 @@
   }
 }
 
-@media (max-width: 499px) {
+@media (max-width: 649px) {
   .NavigationItem a {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-right: 4px solid transparent;
     font-size: 24px;
   }

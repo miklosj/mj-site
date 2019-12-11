@@ -15,7 +15,7 @@
   font-size: 20px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 650px) {
   .SideDrawer {
     display: none;
   }

@@ -12,6 +12,8 @@
     4px 4px 0 #fff;
   color: #0070a0;
   letter-spacing: 5px;
+  white-space:nowrap;
+  overflow: hidden;
 
   font-family: 'Russo One', sans-serif;
 }
