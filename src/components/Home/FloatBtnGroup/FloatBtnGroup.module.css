@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+.BtnGroup {
+  z-index: 40;
+  top: calc(50vh + 17vw);
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.Btn {
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 0.2em;
+  width: 10vw;
+  margin: 10px;
+  font-size: 24px;
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+.BigText {
+  z-index: 40;
+  top: 35vh;
+  color: #0070a0;
+  position: absolute;
+  font-size: 10vw;
+  width: 100%;
+  font-family: 'Russo One', sans-serif;
+  text-shadow:
+  -0.1vw -0.1vw 0 #fff,
+   0.1vw -0.1vw 0 #fff,
+   -0.1vw 0.1vw 0 #fff,
+    0.1vw 0.1vw 0 #fff,
+    0.2vw 0.2vw 0 #fff,
+    0.3vw 0.3vw 0 #fff,
+    0.4vw 0.4vw 0 #fff;
+}
+
+.SmallText {
+  z-index: 40;
+  top: calc(35vh + 12vw);
+  color: #fff;
+  position: absolute;
+  font-size: 3vw;
+  width: 100%;
+  font-family: 'Ubuntu Mono', monospace;
+}
