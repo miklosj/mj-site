@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
 
+.Link {
+  text-decoration: none;
+}
+
 .Logo {
   font-size: 24px;
   text-shadow:
@@ -8,12 +12,21 @@
    -1px 1px 0 #fff,
     1px 1px 0 #fff,
     2px 2px 0 #fff,
-    3px 3px 0 #fff,
-    4px 4px 0 #fff;
+    3px 3px 0 #fff;
   color: #0070a0;
   letter-spacing: 5px;
   white-space:nowrap;
   overflow: hidden;
+  transition: all 0.2s;
 
   font-family: 'Russo One', sans-serif;
+}
+
+.Logo:active {
+  text-shadow:
+  -1px -1px 0 #fff,
+   1px -1px 0 #fff,
+   -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+  transform: translate(2px, 2px);
 }
