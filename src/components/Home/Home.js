@@ -8,7 +8,7 @@ const home = (props) => (
   <Aux>
     <AtcCanvas></AtcCanvas>
     <div className={styles.BigText}> MIKLÓS JÁSDI</div>
-    <div className={styles.SmallText}> Aeronautical Engineer &amp; Software Developer</div>
+    <div className={styles.SmallText}> Aeronautical Engineer &amp; Data Scientist</div>
     <FloatBtnGroup/>
   </Aux>
 )
