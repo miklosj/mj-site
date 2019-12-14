@@ -1,19 +1,19 @@
 import React from 'react';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
-import classes from './SideDrawer.module.css';
+import styles from './SideDrawer.module.css';
 import Aux from '../../../hoc/Aux/Aux';
 
 const sideDrawer = (props) => {
-  let attachedClasses = [classes.SideDrawer, classes.Close];
+  let attachedClasses = [styles.SideDrawer, styles.Close];
   if (props.open) {
-    attachedClasses = [classes.SideDrawer, classes.Open];
+    attachedClasses = [styles.SideDrawer, styles.Open];
   }
 
   return (
     <Aux>
       <div className={attachedClasses.join(' ')} onClick={props.closed}>
-        <div className={classes.Title}>
+        <div className={styles.Title}>
           <b>MENU</b>
         </div>
         <nav>

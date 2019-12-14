@@ -1,12 +1,12 @@
 import React from 'react';
 import FloatBtn from './FloatBtn/FloatBtn';
-import classes from './FloatBtnGroup.module.css';
+import styles from './FloatBtnGroup.module.css';
 import routes from './../../../utils/routes';
 
 const FloatBtnGroup = (props) => (
 
-  <div className={classes.OuterContainer}>
-    <div className={classes.BtnGroup}>
+  <div className={styles.OuterContainer}>
+    <div className={styles.BtnGroup}>
       <FloatBtn to={routes.BLOG}>my blog</FloatBtn>
       <FloatBtn to={routes.ABOUT}>about me</FloatBtn>
       <FloatBtn to={routes.CONTACT}>contact</FloatBtn>

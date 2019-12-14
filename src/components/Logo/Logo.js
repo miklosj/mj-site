@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import classes from './Logo.module.css';
+import styles from './Logo.module.css';
 import routes from './../../utils/routes';
 
 const logo = (props) => (
-  <Link to={routes.BASE} className={classes.Link}>
-    <div className={classes.Logo} style={{height: props.height}}>
+  <Link to={routes.BASE} className={styles.Link}>
+    <div className={styles.Logo} style={{height: props.height}}>
       <b>MIKLÓS JÁSDI</b>
     </div>
   </Link>

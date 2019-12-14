@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import classes from './FloatBtn.module.css';
+import styles from './FloatBtn.module.css';
 
 const floatBtn = (props) => (
-  <Link to={props.to} className={classes.Link}>
-    <div className={classes.FloatBtn}>{props.children}</div>
+  <Link to={props.to} className={styles.Link}>
+    <div className={styles.FloatBtn}>{props.children}</div>
   </Link>
 );
 
