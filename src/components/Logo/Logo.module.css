@@ -17,16 +17,23 @@
   letter-spacing: 5px;
   white-space:nowrap;
   overflow: hidden;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   transition: all 0.2s;
-
   font-family: 'Russo One', sans-serif;
 }
 
-.Logo:active {
-  text-shadow:
-  -1px -1px 0 #fff,
-   1px -1px 0 #fff,
-   -1px 1px 0 #fff,
-    1px 1px 0 #fff;
-  transform: translate(2px, 2px);
+@media (hover: hover) {
+  .Logo:hover {
+    text-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+     -1px 1px 0 #fff,
+      1px 1px 0 #fff;
+    transform: translate(2px, 2px);
+  }
 }

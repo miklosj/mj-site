@@ -5,7 +5,7 @@ import styles from './Logo.module.css';
 import routes from './../../utils/routes';
 
 const logo = (props) => (
-  <Link to={routes.BASE} className={styles.Link}>
+  <Link to={routes.BASE} className={styles.Link} draggable="false">
     <div className={styles.Logo} style={{height: props.height}}>
       <b>MIKLÓS JÁSDI</b>
     </div>
