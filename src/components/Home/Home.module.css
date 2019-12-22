@@ -18,7 +18,7 @@
   font-family: 'Ubuntu Mono', monospace;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 850px) {
 
   .BigText {
     font-size: 8vw;
@@ -38,7 +38,7 @@
   }
 }
 
-@media (max-width: 649px) {
+@media (max-width: 849px) {
 
   .BigText {
     font-size: 12vw;

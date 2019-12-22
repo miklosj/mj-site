@@ -1,14 +1,21 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import styles from './SideDrawer.module.css';
 import Aux from '../../../hoc/Aux/Aux';
 
-const sideDrawer = (props) => {
+const SideDrawer = (props) => {
   let attachedClasses = [styles.SideDrawer, styles.Close];
   if (props.open) {
     attachedClasses = [styles.SideDrawer, styles.Open];
   }
+
+  const history = useHistory();
+  const closeHandler = props.closed;
+
+  useEffect(() => {
+    closeHandler();
+  }, [history.location.pathname, closeHandler]);
 
   return (
     <Aux>
@@ -24,4 +31,4 @@ const sideDrawer = (props) => {
   );
 };
 
-export default sideDrawer;
+export default SideDrawer;

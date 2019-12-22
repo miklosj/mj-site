@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react';
+import PostPreview from './PostPreview/PostPreview';
 import styles from './Blog.module.css';
 import axios from './../../utils/axios-blog';
 
@@ -7,7 +8,8 @@ const Blog = (props) => {
   const [posts, setPosts] = useState({posts: []});
 
   useEffect(() => {
-    axios.get('/posts.json')
+    axios.get('/posts.json?orderBy="date"')
+    // /posts.json?orderBy="date"&limitToFirst=2 for pagination
       .then(response => {
         setPosts(response.data);
       })
@@ -19,8 +21,18 @@ const Blog = (props) => {
   let postElements = [];
 
   if (posts.length > 0) {
-    postElements = posts.map((post, idx) => {
-      return <p key={idx}>{post.title}</p>
+    postElements = posts
+      .filter((post) => {
+        return post == null ? false : true;
+      })
+      .map((post, idx) => {
+      return (
+        <PostPreview
+          title={post.title}
+          content={post.content}
+          date={post.date}
+          key={post.date}/>
+      )
     });
   }
 

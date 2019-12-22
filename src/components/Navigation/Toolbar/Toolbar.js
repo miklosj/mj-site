@@ -8,12 +8,12 @@ import Logo from '../../Logo/Logo';
 const toolbar = (props) => (
   <header className={classes.Toolbar}>  
     <div className={classes.Logo}>
-      <Logo></Logo>
+      <Logo clicked={props.drawerClose}/>
     </div>
     <nav className={classes.DesktopOnly}>
       <NavigationItems/>
     </nav>
-    <DrawerToggle clicked={props.drawerToggleClicked}/>
+    <DrawerToggle clicked={props.drawerToggle}/>
   </header>
 );
 

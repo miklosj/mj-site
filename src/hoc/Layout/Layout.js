@@ -20,7 +20,8 @@ class Layout extends Component {
   render = () => (
     <Aux>
       <Toolbar
-        drawerToggleClicked={this.sideDrawerToggleHandler}/>
+        drawerToggle={this.sideDrawerToggleHandler}
+        drawerClose={this.sideDrawerClosedHandler}/>
       <SideDrawer
         open={this.state.showSideDrawer}
         closed={this.sideDrawerClosedHandler}/>

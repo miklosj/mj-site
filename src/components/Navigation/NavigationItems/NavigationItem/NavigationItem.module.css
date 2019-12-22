@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
 .NavigationItem {
-  margin: 10px 0;
+  margin: 0px 0;
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -9,7 +9,7 @@
 }
 
 .NavigationItem a {
-  color: #002040;
+  color: #fff;
   text-decoration: none;
   width: 100%;
   box-sizing: border-box;
@@ -20,7 +20,12 @@
 .NavigationItem a:hover,
 .NavigationItem a:active,
 .NavigationItem a.active {
-  color: #fff;
+  background-color: #00648f;
+}
+
+.NavigationItem a:active,
+.NavigationItem a.active {
+  box-shadow: inset 0 0 5px #000000;
 }
 
 @media (min-width: 650px) {
@@ -38,15 +43,10 @@
     border-bottom: 4px solid transparent;
   }
 
-  .NavigationItem a:hover {
-    color: #fff;
-  }
-
   .NavigationItem a:active,
   .NavigationItem a.active {
-    background-color: #0070a0;
+    padding: 16px 10px;
     border-bottom: 4px solid #fff;
-    color: #fff;
   }
 }
 
@@ -56,10 +56,6 @@
     padding-bottom: 15px;
     border-right: 4px solid transparent;
     font-size: 24px;
-  }
-
-  .NavigationItem a:hover {
-    color: #fff;
   }
 
   .NavigationItem a:active,

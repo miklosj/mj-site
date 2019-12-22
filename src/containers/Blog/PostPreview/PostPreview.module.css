@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Russo+One&display=swap');
+
+.Title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 5vh;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Content {
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
