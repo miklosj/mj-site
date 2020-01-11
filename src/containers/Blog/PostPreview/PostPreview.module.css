@@ -3,14 +3,39 @@
 .Title {
   font-family: 'Russo One', sans-serif;
   font-size: 5vh;
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
 }
 
 .Content {
   font-family: 'Open Sans', sans-serif;
   text-align: justify;
-  margin-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+}
+
+.BoxImg {
+  display: flex;
+  flex-flow: column;
+  flex: 0 0 40%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+img {
+  flex-shrink: 0;
+  max-height: 100%;
+}
+
+.BoxContent {
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.PostContainer {
+  display: flex;
+  margin: 40px 40px;
+  height: 400px;
+  box-shadow: 5px 5px 5px #000;
 }

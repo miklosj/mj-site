@@ -31,6 +31,7 @@ const Blog = (props) => {
           title={post.title}
           content={post.content}
           date={post.date}
+          imgurl={post.imgurl}
           key={post.date}/>
       )
     });
