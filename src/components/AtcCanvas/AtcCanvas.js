@@ -223,7 +223,7 @@ class AtcCanvas extends Component {
         id="canvas"
         width={this.state.width}
         height={this.state.height}>
-        </canvas>
+      </canvas>
       </div>)
   }
 }

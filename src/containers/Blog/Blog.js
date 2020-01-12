@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState, useRef} from 'react';
 import PostPreview from './PostPreview/PostPreview';
 import styles from './Blog.module.css';
 import axios from './../../utils/axios-blog';
@@ -6,16 +6,23 @@ import axios from './../../utils/axios-blog';
 const Blog = (props) => {
 
   const [posts, setPosts] = useState({posts: []});
+  const isCancelled = useRef(false);
 
   useEffect(() => {
     axios.get('/posts.json?orderBy="date"')
     // /posts.json?orderBy="date"&limitToFirst=2 for pagination
       .then(response => {
-        setPosts(response.data);
+        if (!isCancelled.current) {
+          setPosts(response.data);
+        }
       })
       .catch(error => {
         console.log(error);
       });
+
+    return () => {
+      isCancelled.current = true;
+    };
   }, []);
 
   let postElements = [];
@@ -39,7 +46,7 @@ const Blog = (props) => {
 
   return (
     <div>
-      <div className={styles.Test}>{postElements}</div>
+      <div className={styles.Blog}>{postElements}</div>
     </div>
   )
 }

@@ -37,5 +37,8 @@ img {
   display: flex;
   margin: 40px 40px;
   height: 400px;
-  box-shadow: 5px 5px 5px #000;
+  box-shadow: 5px 5px 20px #000;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1em;
+  overflow: hidden;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import styles from './Logo.module.css';
-import routes from './../../utils/routes';
+import routes from '../../../utils/routes';
 
 const logo = (props) => (
   <Link to={routes.BASE} className={styles.Link} draggable="false">

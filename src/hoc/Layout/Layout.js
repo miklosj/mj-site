@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
 import Aux from '../Aux/Aux';
-import styles from './Layout.module.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import AtcCanvas from '../../components/AtcCanvas/AtcCanvas';
 
 class Layout extends Component {
   state = {
@@ -25,7 +25,8 @@ class Layout extends Component {
       <SideDrawer
         open={this.state.showSideDrawer}
         closed={this.sideDrawerClosedHandler}/>
-      <main className={styles.Content}>
+      <main>
+        <AtcCanvas></AtcCanvas>
         {this.props.children}
       </main>
     </Aux>
