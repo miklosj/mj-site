@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+.Post {
+  margin-top: 100px;
+  width: auto;
+  position: absolute;
+  overflow: hidden;
+  z-index: 40;
+  border-radius: 10px;
+  margin-bottom: 60px;
+  margin-right: 50px;
+  margin-left: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.PostContent {
+  text-align: justify;
+  margin: 50px 100px 50px 100px;
+  line-height: 1.5;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.PostHeader {
+  top: 0px;
+  height: 20vw;
+  position: relative;
+}
+
+.PostImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.PostDim {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PostTitle {
+  z-index: 60;
+  text-align: center;
+  font-size: 6vw;
+  color: #fff;
+  text-shadow: 5px 5px 2px #000;
+  font-family: 'Ubuntu Mono', monospace;
+}

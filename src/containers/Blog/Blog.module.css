@@ -1,5 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
 .Blog {
-  margin-top: 100px;
-  position: relative;
+  margin-top: 60px;
+  width: auto;
+  position: absolute;
   z-index: 40;
+}
+
+.PostPreviewContainer {
+  overflow: hidden;
+  border-radius: 10px;
+  height: 500px;
+  display: inline-block;
+  width: 45%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.PostPreviewContent {
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  top: -150px;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.5);
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.PostPreviewDate {
+  color: #303030;
+  text-align: right;
+  float: right;
+  padding-right: 15px;
+}
+
+.PostPreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.PostPreviewText {
+  overflow: hidden;
+  display:  inline-block;
+  text-align: justify;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.PostPreviewTitle {
+  float: left;
+  text-align: left;
+  padding-left: 15px;
+}
+
+@media (min-width: 850px) {
+
+  .Blog {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .PostPreviewContainer {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 849px) {
+
+  .Blog {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .PostPreviewContainer {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
