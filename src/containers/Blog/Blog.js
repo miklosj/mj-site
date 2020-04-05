@@ -36,13 +36,13 @@ const Blog = (props) => {
       {posts.map(post => (
         <div key={post.slug} className={styles.PostPreviewContainer}>
           <img src={post.titleImg} alt={post.titleImgAlt} className={styles.PostPreviewImg}/>
-          <div key={post.slug} className={styles.PostPreviewContent}>
-            <h2 style={{clear: "both"}}>
+          <div className={styles.PostPreviewBg}></div>
+          <div className={styles.PostPreviewContent}>
+            <h3 style={{clear: "both"}}>
               <span className={styles.PostPreviewTitle}>{post.title}</span>
               <span className={styles.PostPreviewDate}>{post.dateStr}</span>
-            </h2>
-            <p className={styles.PostPreviewText}>{post.content.substring(0, 150)}</p>
-            <Link to={`/${post.slug}`}>... Continue reading</Link>
+            </h3>
+            <p className={styles.PostPreviewText}>{post.content}</p>
           </div>
         </div>
       ))}
@@ -51,3 +51,5 @@ const Blog = (props) => {
 }
 
 export default Blog;
+
+// <Link to={`/blog/${post.slug}`} className={styles.PostLink}>... Continue reading</Link>
