@@ -11,7 +11,7 @@ const Blog = (props) => {
       "titleImgAlt" : "A random photo #1",
       "dateStr" : "2020-02-03",
       "slug" : "third-blog-post",
-      "title" : "Third blog post"
+      "title" : "Third blog post, very very very very long title"
     },
     {
       "content" : "Nam commodo justo vel elit vestibulum, vel hendrerit mi tristique. Nullam vulputate, magna sit amet tincidunt vestibulum, nisl augue rhoncus augue, eu rutrum sem lectus at dui. Praesent nec lorem ornare risus finibus condimentum. Donec ultrices risus nec massa dignissim pretium. Duis ante urna, ornare in venenatis quis, auctor ac ex. Vivamus ut turpis eget turpis mollis commodo sit amet eget turpis. Suspendisse rhoncus at felis vel fringilla. Morbi gravida nulla lorem, non condimentum lectus bibendum eu. Mauris blandit leo quis rhoncus pellentesque. Suspendisse tellus nulla, dignissim sit amet urna id, viverra auctor libero. Nam et urna accumsan, congue erat in, facilisis nisl. Ut mollis eros fringilla nulla tincidunt volutpat. Aenean laoreet egestas tortor eget laoreet.</p>",
@@ -38,10 +38,8 @@ const Blog = (props) => {
           <img src={post.titleImg} alt={post.titleImgAlt} className={styles.PostPreviewImg}/>
           <div className={styles.PostPreviewBg}></div>
           <div className={styles.PostPreviewContent}>
-            <h3 style={{clear: "both"}}>
-              <span className={styles.PostPreviewTitle}>{post.title}</span>
-              <span className={styles.PostPreviewDate}>{post.dateStr}</span>
-            </h3>
+            <p className={styles.PostPreviewDate}>{post.dateStr}</p>
+            <h2 className={styles.PostPreviewTitle}>{post.title}</h2>
             <p className={styles.PostPreviewText}>{post.content}</p>
           </div>
         </div>
