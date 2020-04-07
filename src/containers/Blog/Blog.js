@@ -35,6 +35,7 @@ const Blog = (props) => {
     <div className={styles.Blog}>
       {posts.map(post => (
         <div key={post.slug} className={styles.PostPreviewContainer}>
+          <Link to={`/blog/${post.slug}`} className={styles.PostLink} style={{color: 'inherit', textDecoration: 'inherit'}}>
           <img src={post.titleImg} alt={post.titleImgAlt} className={styles.PostPreviewImg}/>
           <div className={styles.PostPreviewBg}></div>
           <div className={styles.PostPreviewContent}>
@@ -42,6 +43,7 @@ const Blog = (props) => {
             <h2 className={styles.PostPreviewTitle}>{post.title}</h2>
             <p className={styles.PostPreviewText}>{post.content}</p>
           </div>
+          </Link>
         </div>
       ))}
     </div>
