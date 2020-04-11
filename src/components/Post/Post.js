@@ -26,11 +26,10 @@ const post = (props) => {
     // Once generated, these elements won't change, therefore using
     // indices as keys should be fine...
     while ((match = re.exec(paragraph)) != null) {
-      const idxStart = match.index;
-      const idxEnd = match.index + match[0].length;
-      const textPart = paragraph.substr(idxPrev, idxStart);
-      idxPrev = idxEnd;
-      console.log(match[0])
+      const imgUrlStart = match.index;
+      const imgUrlEnd = match.index + match[0].length;
+      const textPart = paragraph.substring(idxPrev, imgUrlStart);
+      idxPrev = imgUrlEnd;
       elems.push(<span key={elems.length + 1}>{textPart}</span>);
       elems.push(<PostImage key={elems.length + 1} src={match[2]} alt={match[1]}/>)
     }
