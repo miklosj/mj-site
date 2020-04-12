@@ -36,8 +36,7 @@ const Blog = (props) => {
   return (
     <div className={styles.Blog}>
       {posts.map(post => (
-        <Link to={`/blog/${post.slug}`} key={post.slug} style={{'color': 'inherit', 'text-decoration': 'inherit'}}>
-        <div className={styles.PostPreviewContainer}>
+        <Link to={`/blog/${post.slug}`} key={post.slug} style={{color: 'inherit', textDecoration: 'inherit'}}>
           <PostPreview
             imgsrc={post.titleImg} 
             imgalt={post.titleImgAlt}
@@ -45,7 +44,6 @@ const Blog = (props) => {
             title={post.title}
             content={post.content}
             />
-        </div>
         </Link>
       ))}
     </div>

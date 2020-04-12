@@ -1,18 +1,41 @@
-import React, {Fragment}  from 'react';
+import React, { Fragment, useState }  from 'react';
 import styles from './PostPreview.module.css';
+
+import Loading from '../../../components/UI/Loading/Loading';
 
 const PostPreview = (props) => {
 
-  return (
-    <Fragment>
-      <img src={props.imgsrc} alt={props.imgalt} className={styles.PostPreviewImg}/>
-      <div className={styles.PostPreviewBg}></div>
-      <div className={styles.PostPreviewContent}>
-        <p className={styles.PostPreviewDate}>{props.date}</p>
-        <h2 className={styles.PostPreviewTitle}>{props.title}</h2>
-        <p className={styles.PostPreviewText}>{props.content}</p>
+  const [loaded, setLoaded] = useState(false);
+  let content = null;
+
+  if (!loaded)
+    content = (
+      <div className={styles.Placeholder}>
+        <Loading/>
       </div>
-    </Fragment>
+    );
+  else
+    content = (
+      <Fragment>
+        <div className={styles.PostPreviewBg}></div>
+        <div className={styles.PostPreviewContent}>
+          <p className={styles.PostPreviewDate}>{props.date}</p>
+          <h2 className={styles.PostPreviewTitle}>{props.title}</h2>
+          <p className={styles.PostPreviewText}>{props.content}</p>
+        </div>
+      </Fragment>
+    );
+
+
+  return (
+    <div className={styles.PostPreviewContainer}>
+      <img
+        src={props.imgsrc}
+        alt={props.imgalt}
+        className={loaded ? styles.PostPreviewImg : styles.Disabled}
+        onLoad={() => setLoaded(true)}/>
+      {content}
+    </div>
   );
 }
 
