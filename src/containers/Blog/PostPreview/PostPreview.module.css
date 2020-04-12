@@ -1,0 +1,43 @@
+.PostPreviewContent {
+  position: relative;
+  overflow: hidden;
+  height: 20vh;
+  top: -40vh;
+  z-index: 50;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
+  font-family: 'Ubuntu Mono', monospace;
+  user-select: none;
+}
+
+.PostPreviewBg {
+  position: relative;
+  overflow: hidden;
+  height: 20vh;
+  top: -20vh;
+  z-index: 45;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.PostPreviewDate {
+  text-align: left;
+  margin: 10px 0px 0px 15px;
+  color: #555;
+}
+
+.PostPreviewTitle {
+  text-align: left;
+  margin: 0px 0px 0px 15px;
+}
+
+.PostPreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.PostPreviewText {
+  display: inline-block;
+  text-align: justify;
+  margin: 5px 15px 15px 15px;
+}

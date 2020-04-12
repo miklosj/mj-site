@@ -2,6 +2,8 @@ import React  from 'react';
 import { Link } from "react-router-dom";
 import styles from './Blog.module.css';
 
+import PostPreview from './PostPreview/PostPreview';
+
 const Blog = (props) => {
 
   const posts = [
@@ -34,22 +36,20 @@ const Blog = (props) => {
   return (
     <div className={styles.Blog}>
       {posts.map(post => (
-        <div key={post.slug} className={styles.PostPreviewContainer}>
-          <Link to={`/blog/${post.slug}`} className={styles.PostLink} style={{color: 'inherit', textDecoration: 'inherit'}}>
-          <img src={post.titleImg} alt={post.titleImgAlt} className={styles.PostPreviewImg}/>
-          <div className={styles.PostPreviewBg}></div>
-          <div className={styles.PostPreviewContent}>
-            <p className={styles.PostPreviewDate}>{post.dateStr}</p>
-            <h2 className={styles.PostPreviewTitle}>{post.title}</h2>
-            <p className={styles.PostPreviewText}>{post.content}</p>
-          </div>
-          </Link>
+        <Link to={`/blog/${post.slug}`} key={post.slug} style={{'color': 'inherit', 'text-decoration': 'inherit'}}>
+        <div className={styles.PostPreviewContainer}>
+          <PostPreview
+            imgsrc={post.titleImg} 
+            imgalt={post.titleImgAlt}
+            date={post.dateStr}
+            title={post.title}
+            content={post.content}
+            />
         </div>
+        </Link>
       ))}
     </div>
   );
 }
 
 export default Blog;
-
-// <Link to={`/blog/${post.slug}`} className={styles.PostLink}>... Continue reading</Link>
