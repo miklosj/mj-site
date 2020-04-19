@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from './Blog.module.css';
 
 import PostPreview from './PostPreview/PostPreview';
+import ScrollToTop from '../../hoc/ScrollToTop/ScrollToTop';
 
 const Blog = (props) => {
 
@@ -34,19 +35,21 @@ const Blog = (props) => {
   ]
 
   return (
-    <div className={styles.Blog}>
-      {posts.map(post => (
-        <Link to={`/blog/${post.slug}`} key={post.slug} style={{color: 'inherit', textDecoration: 'inherit'}}>
-          <PostPreview
-            imgsrc={post.titleImg} 
-            imgalt={post.titleImgAlt}
-            date={post.dateStr}
-            title={post.title}
-            content={post.content}
-            />
-        </Link>
-      ))}
-    </div>
+    <ScrollToTop>
+      <div className={styles.Blog}>
+        {posts.map(post => (
+          <Link to={`/blog/${post.slug}`} key={post.slug} style={{color: 'inherit', textDecoration: 'inherit'}}>
+            <PostPreview
+              imgsrc={post.titleImg} 
+              imgalt={post.titleImgAlt}
+              date={post.dateStr}
+              title={post.title}
+              content={post.content}
+              />
+          </Link>
+        ))}
+      </div>
+    </ScrollToTop>
   );
 }
 
