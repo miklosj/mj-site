@@ -1,18 +1,44 @@
-import React from 'react';
+import React, { useState }  from 'react';
+import { getFirebase } from "../../firebase";
 import styles from './Post.module.css';
 
+import Loading from './../UI/Loading/Loading';
 import PostImage from './PostImage/PostImage';
 import ScrollToTop from '../../hoc/ScrollToTop/ScrollToTop';
 
-const post = (props) => {
+const Post = ({ match }) => {
 
-  const post = {
-    "content": "Etiam sed sodales diam. Mauris non laoreet erat. Ut ex est, laoreet sed sapien vel, auctor posuere ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ultricies massa id diam pretium condimentum. Curabitur sem nibh, suscipit euismod quam vel, feugiat eleifend sem. Integer id pellentesque odio, a finibus massa. Sed maximus ac tortor sit amet molestie. Praesent ornare tristique pulvinar. Curabitur non justo porttitor, cursus mauris ut, pulvinar massa. Pellentesque fringilla at orci vitae congue. Etiam sed sodales diam. Mauris non laoreet erat. Ut ex est, laoreet sed sapien vel, auctor posuere ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ultricies massa id diam pretium condimentum. Curabitur sem nibh, suscipit euismod quam vel, feugiat eleifend sem. Integer id pellentesque odio, a finibus massa. Sed maximus ac tortor sit amet molestie. Praesent ornare tristique pulvinar. Curabitur non justo porttitor, cursus mauris ut, pulvinar massa. Pellentesque fringilla at orci vitae congue. ![](https://live.staticflickr.com/4426/35661811474_7b5fa6b318_o.jpg) Etiam sed sodales diam. Mauris non laoreet erat. Ut ex est, laoreet sed sapien vel, auctor posuere ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ultricies massa id diam pretium condimentum. Curabitur sem nibh, suscipit euismod quam vel, feugiat eleifend sem. Integer id pellentesque odio, a finibus massa. Sed maximus ac tortor sit amet molestie. Praesent ornare tristique pulvinar. Curabitur non justo porttitor, cursus mauris ut, pulvinar massa. Pellentesque fringilla at orci vitae congue. Etiam sed sodales diam. Mauris non laoreet erat. Ut ex est, laoreet sed sapien vel, auctor posuere ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ultricies massa id diam pretium condimentum. ![Image description here. It is a very very very very looooong description.](https://live.staticflickr.com/4412/36099793680_32077c8a80_h.jpg) Curabitur sem nibh, suscipit euismod quam vel, feugiat eleifend sem. Integer id pellentesque odio, a finibus massa. Sed maximus ac tortor sit amet molestie. Praesent ornare tristique pulvinar. Curabitur non justo porttitor, cursus mauris ut, pulvinar massa. Pellentesque fringilla at orci vitae congue.",
-    "titleImg": "https://live.staticflickr.com/4422/36064548864_bbf0fd44a8_o.jpg",
-    "dateStr": "2020-02-01",
-    "slug": "first-blog-post",
-    "title": "First Blog Post"
-  };
+  const slug = match.params.slug;
+  const [loading, setLoading] = useState(true);
+  const [post, setPost] = useState();
+
+  console.log(slug)
+
+  if (loading && !post) {
+    getFirebase()
+      .database()
+      .ref()
+      .child(`/posts/`)
+      .orderByChild('slug')
+      .limitToLast(1)
+      .equalTo(slug)
+      .once("value")
+      .then(snapshot => {
+        if (snapshot.val()) {
+          for (let key in snapshot.val()) {
+            setPost(snapshot.val()[key]);
+            break;
+          }
+        }
+        setLoading(false);
+      });
+  }
+
+  if (loading || (!post))
+    return (
+      <div className={styles.PostLoading}>
+        <Loading color="White"/>
+      </div>);
 
   let paragraphs = post.content.split("\n").map((paragraph, idx) => {
 
@@ -65,4 +91,4 @@ const post = (props) => {
   );
 }
 
-export default post;
+export default Post;

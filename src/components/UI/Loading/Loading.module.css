@@ -10,10 +10,10 @@
   position: absolute;
   left: 8px;
   width: 16px;
-  border: 1px solid #000;
   border-radius: 2px;
   animation: loading 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
+
 .Loading div:nth-child(1) {
   left: 8px;
   animation-delay: -0.24s;
@@ -35,4 +35,12 @@
     top: 24px;
     height: 32px;
   }
+}
+
+.Black div {
+  border: 2px solid #000;
+}
+
+.White div {
+  border: 2px solid #FFF;
 }
