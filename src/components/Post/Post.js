@@ -1,18 +1,18 @@
 import React, { useState }  from 'react';
+import { Redirect } from 'react-router-dom'
 import { getFirebase } from "../../firebase";
 import styles from './Post.module.css';
 
 import Loading from './../UI/Loading/Loading';
 import PostImage from './PostImage/PostImage';
 import ScrollToTop from '../../hoc/ScrollToTop/ScrollToTop';
+import routes from '../../utils/routes';
 
 const Post = ({ match }) => {
 
   const slug = match.params.slug;
   const [loading, setLoading] = useState(true);
   const [post, setPost] = useState();
-
-  console.log(slug)
 
   if (loading && !post) {
     getFirebase()
@@ -34,11 +34,17 @@ const Post = ({ match }) => {
       });
   }
 
-  if (loading || (!post))
+  if (loading)
     return (
       <div className={styles.PostLoading}>
         <Loading color="White"/>
       </div>);
+
+  // If post doesn't exist
+  if (!post) { 
+    return <Redirect to={routes.BASE} />;
+  }
+
 
   let paragraphs = post.content.split("\n").map((paragraph, idx) => {
 
