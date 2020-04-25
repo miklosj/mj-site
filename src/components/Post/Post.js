@@ -42,7 +42,7 @@ const Post = ({ match }) => {
 
   // If post doesn't exist
   if (!post) { 
-    return <Redirect to={routes.BASE} />;
+    return <Redirect to={routes.NOTFOUND} />;
   }
 
 
