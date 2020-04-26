@@ -84,9 +84,8 @@ const Post = ({ match }) => {
         <div className={styles.PostHeader}>
           <img src={post.titleImg} alt={post.title} className={styles.PostHeaderImg}></img>
           <div className={styles.PostDim}>
-            <h1 className={styles.PostTitle}>
-              <b>{post.title}</b>
-            </h1>
+            <h1 className={styles.PostTitle}>{post.title}</h1>
+            <h3 className={styles.PostDate}>{post.dateStr}</h3>
           </div>
         </div>
         <div className={styles.PostContent}>
