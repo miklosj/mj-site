@@ -1,0 +1,244 @@
+$base-font-size: 1em;
+$title-font-size: 1.4em;
+$date-font-size: 1.1em;
+$base-margin: 15px;
+
+$m-m: 1.2;
+$m-l: 1.3;
+$m-xl: 1.5;
+$m-xxl: 2;
+$m-r: 3;
+
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 86em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+$bp-retina: 200em;
+
+// Media Queries
+$mq-small: "(min-width: #{$bp-small})";
+$mq-medium: "(min-width: #{$bp-medium})";
+$mq-large: "(min-width: #{$bp-large})";
+$mq-xlarge: "(min-width: #{$bp-xlarge})";
+$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
+$mq-retina: "(min-width: #{$bp-retina})";
+
+.PostPreviewContent {
+  position: relative;
+  overflow: hidden;
+  height: 20vh;
+  top: -40vh;
+  z-index: 50;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
+  font-family: 'Ubuntu Mono', monospace;
+  user-select: none;
+}
+
+.PostPreviewBg {
+  position: relative;
+  overflow: hidden;
+  height: 20vh;
+  top: -20vh;
+  z-index: 45;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.PostPreviewDate {
+  text-align: left;
+  margin: $base-margin 0 0 $base-margin;
+  color: #555;
+
+  font-size: $date-font-size;
+
+  $top-margin: $base-margin*0.5;
+
+  @media #{$mq-medium} {
+    font-size: $date-font-size*$m-m;
+    margin: $top-margin*$m-m 0 0 $base-margin*$m-m;
+  }
+
+  @media #{$mq-large} {
+    font-size: $date-font-size*$m-l;
+    margin: $top-margin*$m-l 0 0 $base-margin*$m-l;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: $date-font-size*$m-xl;
+    margin: $top-margin*$m-xl 0 0 $base-margin*$m-xl;
+  }
+
+  @media #{$mq-xxlarge} {
+    font-size: $date-font-size*$m-xxl;
+    margin: $top-margin*$m-xxl 0 0 $base-margin*$m-xxl;
+  }
+
+  @media #{$mq-retina} {
+    font-size: $date-font-size*$m-r;
+    margin: $base-margin*$m-r 0 0 $base-margin*$m-r;
+  }
+}
+
+.PostPreviewTitle {
+  text-align: left;
+  margin: 0 0 0 $base-margin;
+
+  font-size: $title-font-size;
+
+  @media #{$mq-medium} {
+    font-size: $title-font-size*$m-m;
+    margin: 0 0 0 $base-margin*$m-m;
+  }
+
+  @media #{$mq-large} {
+    font-size: $title-font-size*$m-l;
+    margin: 0 0 0 $base-margin*$m-l;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: $title-font-size*$m-xl;
+    margin: 0 0 0 $base-margin*$m-xl;
+  }
+
+  @media #{$mq-xxlarge} {
+    font-size: $title-font-size*$m-xxl;
+    margin: 0 0 0 $base-margin*$m-xxl;
+  }
+
+  @media #{$mq-retina} {
+    font-size: $title-font-size*$m-r;
+    margin: 0 0 0 $base-margin*$m-r;
+  }
+}
+
+.PostPreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.PostPreviewText {
+  display: inline-block;
+  text-align: justify;
+  margin: $base-margin*0.3 $base-margin $base-margin $base-margin;
+
+  font-size: $base-font-size;
+
+  $m-margin: $base-margin*$m-m;
+  $l-margin: $base-margin*$m-l;
+  $xl-margin: $base-margin*$m-xl;
+  $xxl-margin: $base-margin*$m-xxl;
+  $r-margin: $base-margin*$m-r;
+
+  @media #{$mq-medium} {
+    font-size: $base-font-size*$m-m;
+    margin: $base-margin*0.3*$m-m $m-margin $m-margin $m-margin;
+  }
+
+  @media #{$mq-large} {
+    font-size: $base-font-size*$m-l;
+    margin: $base-margin*0.3*$m-l $l-margin $l-margin $l-margin;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: $base-font-size*$m-xl;
+    margin: $base-margin*0.3*$m-xl $xl-margin $xl-margin $xl-margin;
+  }
+
+  @media #{$mq-xxlarge} {
+    font-size: $base-font-size*$m-xxl;
+    margin: $base-margin*0.3*$m-xxl $xxl-margin $xxl-margin $xxl-margin;
+  }
+
+  @media #{$mq-retina} {
+    font-size: $base-font-size*$m-r;
+    margin: $base-margin*0.3*$m-r $r-margin $r-margin $r-margin;
+  }
+}
+
+.Placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.Disabled {
+  display: none;
+}
+
+.PostPreviewContainer {
+  $radius: 0.5em;
+
+  overflow: hidden;
+  border-radius: $radius;
+  max-width: 40vw;
+  max-height: 100%;
+  width: 80vh;
+  height: 80vh;
+  margin: 20px;
+
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+   -ms-animation: fadein 1s;
+    -o-animation: fadein 1s;
+       animation: fadein 1s;
+
+  @media #{$mq-medium} {
+    border-radius: $radius*$m-m;
+  }
+
+  @media #{$mq-large} {
+    border-radius: $radius*$m-l;
+  }
+
+  @media #{$mq-xlarge} {
+    border-radius: $radius*$m-xl;
+  }
+
+  @media #{$mq-xxlarge} {
+    border-radius: $radius*$m-xxl;
+  }
+
+  @media #{$mq-retina} {
+    border-radius: $radius*$m-r;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .PostPreviewContainer {
+    width: 90vw;
+    height: 90vw;
+    max-width: 90vw;
+    max-height: 90vw;
+    margin: 20px 0px 20px 0px;
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

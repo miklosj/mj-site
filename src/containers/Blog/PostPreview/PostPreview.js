@@ -1,5 +1,5 @@
 import React, { Fragment, useState }  from 'react';
-import styles from './PostPreview.module.css';
+import styles from './PostPreview.module.scss';
 
 import Loading from '../../../components/UI/Loading/Loading';
 
@@ -28,7 +28,6 @@ const PostPreview = (props) => {
       </Fragment>
     );
   }
-
 
   return (
     <div className={styles.PostPreviewContainer}>
