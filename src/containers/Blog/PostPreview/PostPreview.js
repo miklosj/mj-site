@@ -8,23 +8,26 @@ const PostPreview = (props) => {
   const [loaded, setLoaded] = useState(false);
   let content = null;
 
-  if (!loaded)
+  if (!loaded) {
     content = (
       <div className={styles.Placeholder}>
         <Loading/>
       </div>
     );
-  else
+  } else {
+    const taglessContent = props.content.replace(/!\[(.*?)\]\((.*?)\)/g, ' ');
+
     content = (
       <Fragment>
         <div className={styles.PostPreviewBg}></div>
         <div className={styles.PostPreviewContent}>
           <p className={styles.PostPreviewDate}>{props.date}</p>
           <h2 className={styles.PostPreviewTitle}>{props.title}</h2>
-          <p className={styles.PostPreviewText}>{props.content}</p>
+          <p className={styles.PostPreviewText}>{taglessContent}</p>
         </div>
       </Fragment>
     );
+  }
 
 
   return (
