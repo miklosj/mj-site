@@ -1,7 +1,7 @@
 import React, { useState }  from 'react';
 import { Redirect } from 'react-router-dom'
 import { getFirebase } from "../../firebase";
-import styles from './Post.module.css';
+import styles from './Post.module.scss';
 
 import Loading from './../UI/Loading/Loading';
 import PostImage from './PostImage/PostImage';

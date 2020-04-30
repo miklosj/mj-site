@@ -16,7 +16,7 @@ $bp-xlarge: 120em; // 1920px
 $bp-xxlarge: 160em; // 2560px
 $bp-retina: 200em;
 
-// Media Queries
+
 $mq-small: "(min-width: #{$bp-small})";
 $mq-medium: "(min-width: #{$bp-medium})";
 $mq-large: "(min-width: #{$bp-large})";
@@ -171,15 +171,15 @@ $mq-retina: "(min-width: #{$bp-retina})";
 }
 
 .PostPreviewContainer {
+  $margin: 0.7em;
   $radius: 0.5em;
+  $side: 23em;
 
   overflow: hidden;
   border-radius: $radius;
-  max-width: 40vw;
-  max-height: 100%;
-  width: 80vh;
-  height: 80vh;
-  margin: 20px;
+  width: $side;
+  height: $side;
+  margin: $margin;
 
   -webkit-animation: fadein 1s;
   -moz-animation: fadein 1s;
@@ -189,22 +189,37 @@ $mq-retina: "(min-width: #{$bp-retina})";
 
   @media #{$mq-medium} {
     border-radius: $radius*$m-m;
+    width: $side*$m-m;
+    height: $side*$m-m;
+    margin: $margin*$m-m;
   }
 
   @media #{$mq-large} {
     border-radius: $radius*$m-l;
+    width: $side*$m-l;
+    height: $side*$m-l;
+    margin: $margin*$m-l;
   }
 
   @media #{$mq-xlarge} {
     border-radius: $radius*$m-xl;
+    width: $side*$m-xl;
+    height: $side*$m-xl;
+    margin: $margin*$m-xl;
   }
 
   @media #{$mq-xxlarge} {
     border-radius: $radius*$m-xxl;
+    width: $side*$m-xxl;
+    height: $side*$m-xxl;
+    margin: $margin*$m-xxl;
   }
 
   @media #{$mq-retina} {
     border-radius: $radius*$m-r;
+    width: $side*$m-r;
+    height: $side*$m-r;
+    margin: $margin*$m-r;
   }
 }
 
