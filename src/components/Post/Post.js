@@ -49,11 +49,12 @@ const Post = ({ match }) => {
   let paragraphs = post.content.split("\n").map((paragraph, idx) => {
 
     let re = /!\[(.*?)\]\((.*?)\)/g;
-
-    let elems = [];
+    let match;
     let idxPrev = 0;
 
-    let match;
+    let elems = [];
+    if (!idx)
+      elems.push(<div key={0} className={styles.TopSpacer}></div>);
 
     // Once generated, these elements won't change, therefore using
     // indices as keys should be fine...
@@ -69,7 +70,7 @@ const Post = ({ match }) => {
     if (elems.length) {
       elems.push(<span key={elems.length + 1}>{paragraph.substr(idxPrev)}</span>);
       return (
-        <div key={idx}>{elems}</div>
+        <div key={idx} className={styles.ContentDiv}>{elems}</div>
       );
     }
 

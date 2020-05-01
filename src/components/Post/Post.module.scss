@@ -194,6 +194,10 @@ $mq-retina: "(min-width: #{$bp-retina})";
   z-index: 40;
 }
 
+.TopSpacer {
+  padding-top: 1em;
+}
+
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
