@@ -11,7 +11,7 @@ class AtcCanvas extends Component {
   TRACK_MAX_COUNT = 15;
   TRACK_BOUND_OFFSET = 150;
 
-  trackFont = "9px Arial";
+  trackFont = '9px Arial';
 
   tracks = [];
 
@@ -165,7 +165,7 @@ class AtcCanvas extends Component {
     ctx.fillText(row3, textBoxLeft, textBoxTop + 20);
     ctx.fillText(row4, textBoxLeft, textBoxTop + 30);
 
-    track.move(0.002);
+    track.move(0.005);
   }
 
   clear = () => {
@@ -182,10 +182,10 @@ class AtcCanvas extends Component {
     var ctx2 = canvas2.getContext('2d');
 
     this.clear();
-    ctx2.fillStyle = "#223044";
+    ctx2.fillStyle = '#223044';
     this.rect(ctx2, 0,0,this.state.width, this.state.height);
-    ctx2.fillStyle = "#40FFD0";
-    ctx2.strokeStyle = "#40FFD0";
+    ctx2.fillStyle = '#40FFD0';
+    ctx2.strokeStyle = '#40FFD0';
 
     for (let i = 0; i < this.tracks.length; i++) {
       this.drawTag(this.tracks[i], ctx2);
@@ -205,14 +205,14 @@ class AtcCanvas extends Component {
 
   componentDidMount = () => {
     this.updateCanvasDimensions();
-    window.addEventListener("resize", this.updateCanvasDimensions);
+    window.addEventListener('resize', this.updateCanvasDimensions);
 
-    this.ctx = this.refs.canvas.getContext("2d");
-    setInterval(this.draw, 25);
+    this.ctx = this.refs.canvas.getContext('2d');
+    setInterval(this.draw, 100);
   }
 
   componentWillUnmount = () => {
-      window.removeEventListener("resize", this.updateCanvasDimensions);
+      window.removeEventListener('resize', this.updateCanvasDimensions);
   }
 
   render = () => {
