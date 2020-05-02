@@ -6,7 +6,6 @@ import routes from './utils/routes';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Blog from './containers/Blog/Blog';
-import Contact from './components/Contact/Contact';
 import Post from './components/Post/Post';
 import NotFound from './components/NotFound/NotFound';
 
@@ -18,7 +17,6 @@ const App = () => {
             <Route path={routes.BASE} component={Home} exact/>
             <Route path={routes.BLOG} component={Blog} exact/>
             <Route path={routes.ABOUT} component={About}/>
-            <Route path={routes.CONTACT} component={Contact}/>
             <Route path={routes.BLOG + routes.POST} component={Post}/>
             <Route path={routes.NOTFOUND} component={NotFound}/>
             <Redirect to={routes.BASE}/>

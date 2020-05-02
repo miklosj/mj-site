@@ -8,8 +8,7 @@ const FloatBtnGroup = (props) => (
   <div className={styles.OuterContainer}>
     <div className={styles.BtnGroup}>
       <FloatBtn to={routes.BLOG}>my blog</FloatBtn>
-      <FloatBtn to={routes.ABOUT}>about me</FloatBtn>
-      <FloatBtn to={routes.CONTACT}>contact</FloatBtn>
+      <FloatBtn to={routes.ABOUT}>about</FloatBtn>
     </div>
   </div>
 );

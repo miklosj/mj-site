@@ -10,8 +10,7 @@ const navigationItems = (props) => {
     <ul className={styles.NavigationItems}>
       <NavigationItem link={routes.BASE} exact>home</NavigationItem>
       <NavigationItem link={routes.BLOG}>blog</NavigationItem>
-      <NavigationItem link={routes.ABOUT}>about me</NavigationItem>
-      <NavigationItem link={routes.CONTACT}>contact</NavigationItem>
+      <NavigationItem link={routes.ABOUT}>about</NavigationItem>
     </ul>
   );
 };
