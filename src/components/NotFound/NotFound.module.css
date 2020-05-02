@@ -1,42 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
-.BigText {
+.Container {
   z-index: 40;
-  top: 30vh;
-  color: #0070a0;
+  height: 100%;
   position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.BigText {
+  color: #0070a0;
   width: 100%;
   font-family: 'Russo One', sans-serif;
 }
 
 .SmallText {
-  z-index: 40;
   color: #fff;
-  position: absolute;
   width: 100%;
   font-family: 'Ubuntu Mono', monospace;
 }
 
 .BtnGroup {
-  z-index: 40;
-  top: calc(34vh + 17vw);
   color: #fff;
-  position: relative;
   text-align: center;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.OuterContainer {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+@media (max-width: 850px) {
+  .BtnGroup {
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 850px) {
 
   .BigText {
-    font-size: 14vw;
+    font-size: 12vw;
     text-shadow:
     -0.1vw -0.1vw 0 #fff,
      0.1vw -0.1vw 0 #fff,
@@ -49,19 +55,13 @@
 
   .SmallText{
     font-size: 2.75vw;
-    top: calc(36vh + 12vw);
-  }
-
-  .BtnGroup {
-    display: inline-flex;
-    top: calc(34vh + 17vw);
   }
 }
 
 @media (max-width: 849px) {
 
   .BigText {
-    font-size: 25vw;
+    font-size: 12vw;
     text-shadow:
     -0.15vw -0.15vw 0 #fff,
      0.15vw -0.15vw 0 #fff,
@@ -73,12 +73,7 @@
   }
 
   .SmallText {
-    font-size: 5vw;
-    top: calc(33vh + 22vw);
-  }
-
-  .BtnGroup {
-    display: inline-block;
-    top: calc(48vh + 17vw);
+    font-size: 4.1vw;
+    top: calc(35.8vh + 12vw);
   }
 }

@@ -1,13 +1,18 @@
-import React, { Fragment } from 'react';
-import FloatBtnGroup from './FloatBtnGroup/FloatBtnGroup';
-import styles from './Home.module.css';
+import React from 'react';
+import styles from './Home.module.scss';
+import routes from '../../utils/routes';
+
+import FloatBtn from './FloatBtn/FloatBtn';
 
 const home = (props) => (
-  <Fragment>
+  <div className={styles.Container}>
     <div className={styles.BigText}> MIKLÓS JÁSDI</div>
     <div className={styles.SmallText}> Aeronautical Engineer &amp; Data Scientist</div>
-    <FloatBtnGroup/>
-  </Fragment>
+    <div className={styles.BtnGroup}>
+      <FloatBtn to={routes.BLOG}>my blog</FloatBtn>
+      <FloatBtn to={routes.ABOUT}>about</FloatBtn>
+    </div>
+  </div>
 )
 
 export default home;

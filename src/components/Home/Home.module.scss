@@ -1,21 +1,42 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
-.BigText {
+.Container {
   z-index: 40;
-  top: 35vh;
-  color: #0070a0;
+  height: 100%;
   position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.BigText {
+  color: #0070a0;
   width: 100%;
   font-family: 'Russo One', sans-serif;
 }
 
 .SmallText {
-  z-index: 40;
   color: #fff;
-  position: absolute;
   width: 100%;
   font-family: 'Ubuntu Mono', monospace;
+}
+
+.BtnGroup {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 850px) {
+  .BtnGroup {
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 850px) {
@@ -54,6 +75,5 @@
 
   .SmallText {
     font-size: 4.1vw;
-    top: calc(35.8vh + 12vw);
   }
 }
