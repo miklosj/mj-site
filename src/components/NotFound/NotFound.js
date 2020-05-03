@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './NotFound.module.css';
+import styles from './NotFound.module.scss';
 import routes from '../../utils/routes';
 
 import FloatBtn from '../Home/FloatBtn/FloatBtn';

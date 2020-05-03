@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+$base-font-size: 1.3em;
+$width: 8em;
+
+$m-m: 1.2;
+$m-l: 1.3;
+$m-xl: 1.5;
+$m-xxl: 2;
+$m-r: 3;
+
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 86em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+$bp-retina: 200em;
+
+$mq-small: "(min-width: #{$bp-small})";
+$mq-medium: "(min-width: #{$bp-medium})";
+$mq-large: "(min-width: #{$bp-large})";
+$mq-xlarge: "(min-width: #{$bp-xlarge})";
+$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
+$mq-retina: "(min-width: #{$bp-retina})";
+
+.FloatBtn {
+  padding: 7px;
+  border: 2px solid #fff;
+  border-radius: 0.2em;
+  width: $width;
+  margin: 10px;
+  transition: all 0.2s;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: $base-font-size;
+  box-shadow:
+  -1px -1px 0 #fff,
+   1px -1px 0 #fff,
+   -1px 1px 0 #fff,
+    1px 1px 0 #fff,
+    2px 2px 0 #fff,
+    3px 3px 0 #fff,
+    4px 4px 0 #fff;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+  @media (max-width: $bp-small) {
+    flex-direction: column;
+  }
+
+  @media #{$mq-medium} {
+    font-size: $base-font-size*$m-m;
+  }
+
+  @media #{$mq-large} {
+    font-size: $base-font-size*$m-l;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: $base-font-size*$m-xl;
+  }
+
+  @media #{$mq-xxlarge} {
+    font-size: $base-font-size*$m-xxl;
+  }
+
+  @media #{$mq-retina} {
+    font-size: $base-font-size*$m-r;
+  }
+}
+
+@media (hover: hover) {
+  .FloatBtn:hover {
+    box-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+     -1px 1px 0 #fff,
+      1px 1px 0 #fff;
+    transform: translate(4px, 4px);
+  }
+}
+
+.Link {
+  text-decoration: none;
+  color: white;
+}
