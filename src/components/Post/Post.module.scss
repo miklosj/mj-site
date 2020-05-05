@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+@import '../../utils/mediaQueries.scss';
 
 $content-font-size: 1em;
 $date-font-size: 1.2em;
@@ -9,20 +10,6 @@ $m-l: 1.3;
 $m-xl: 1.5;
 $m-xxl: 2;
 $m-r: 3;
-
-$bp-small: 48em; // 768px
-$bp-medium: 64em; // 1024px
-$bp-large: 86em; // 1366px
-$bp-xlarge: 120em; // 1920px
-$bp-xxlarge: 160em; // 2560px
-$bp-retina: 200em;
-
-$mq-small: "(min-width: #{$bp-small})";
-$mq-medium: "(min-width: #{$bp-medium})";
-$mq-large: "(min-width: #{$bp-large})";
-$mq-xlarge: "(min-width: #{$bp-xlarge})";
-$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
-$mq-retina: "(min-width: #{$bp-retina})";
 
 .Post {
   width: 70%;
