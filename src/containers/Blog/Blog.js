@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Blog.module.css';
+import styles from './Blog.module.scss';
 import { getFirebase } from '../../firebase';
 
 import PostPreview from './PostPreview/PostPreview';

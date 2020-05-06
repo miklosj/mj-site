@@ -4,7 +4,10 @@
 $content-font-size: 1em;
 $date-font-size: 1.2em;
 $title-font-size: 2em;
+$top-margin: 2.8em;
 
+$m-xs: 0.8;
+$m-s: 1;
 $m-m: 1.2;
 $m-l: 1.3;
 $m-xl: 1.5;
@@ -12,10 +15,10 @@ $m-xxl: 2;
 $m-r: 3;
 
 .Post {
-  width: 70%;
+  width: 90%;
   left: 0px;
   right: 0px;
-  margin: 60px auto 60px auto;
+  margin: $top-margin*$m-xs auto 60px auto;
   position: absolute;
   overflow: hidden;
   z-index: 40;
@@ -29,8 +32,29 @@ $m-r: 3;
     -o-animation: fadein 1s;
        animation: fadein 1s;
 
-  @media(max-width: $bp-small) {
-    width: 90%;
+  @media #{$mq-small} {
+    width: 70%;
+    margin-top: $top-margin*$m-s;
+  }
+
+  @media #{$mq-medium} {
+    margin-top: $top-margin*$m-m;
+  }
+
+  @media #{$mq-large} {
+    margin-top: $top-margin*$m-l;
+  }
+
+  @media #{$mq-xlarge} {
+    margin-top: $top-margin*$m-xl;
+  }
+
+  @media #{$mq-xxlarge} {
+    margin-top: $top-margin*$m-xxl;
+  }
+
+  @media #{$mq-retina} {
+    margin-top: $top-margin*$m-r;
   }
 }
 
