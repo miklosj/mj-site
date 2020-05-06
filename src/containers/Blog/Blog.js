@@ -14,14 +14,14 @@ const Blog = (props) => {
   if (loading && !posts.length) {
     getFirebase()
       .database()
-      .ref("/posts")
-      .once("value")
-      .then(snapshot => {
+      .ref('/posts')
+      .orderByChild('date')
+      .on('value', snapshot => {
         let posts = [];
-        const snapshotVal = snapshot.val();
-        for (let slug in snapshotVal) {
-          posts.push(snapshotVal[slug]);
-        }
+
+        snapshot.forEach((child) => {
+          posts.push(child.val());
+        })
   
         const newestFirst = posts.reverse();
         setPosts(newestFirst);
