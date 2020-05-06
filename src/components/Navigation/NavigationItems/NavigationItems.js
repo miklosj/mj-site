@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './NavigationItems.module.css';
+import styles from './NavigationItems.module.scss';
 import NavigationItem from './NavigationItem/NavigationItem';
 import routes from './../../../utils/routes'
 

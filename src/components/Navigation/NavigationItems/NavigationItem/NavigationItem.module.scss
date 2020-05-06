@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+@import '../../../../utils/mediaQueries.scss';
+
+$base-font-size: 1.1em;
+$a-padding: 0.4em;
+
+$m-m: 1.2;
+$m-l: 1.3;
+$m-xl: 1.5;
+$m-xxl: 2;
+$m-r: 3;
+
+.NavigationItem {
+  margin: 0px 0;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+}
+
+.NavigationItem a {
+  color: #fff;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Ubuntu Mono', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
+  background-color: #00648f;
+}
+
+.NavigationItem a:active,
+.NavigationItem a.active {
+  box-shadow: inset 0 0 5px #000000;
+}
+
+// Side drawer mode
+
+.NavigationItem a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-right: 4px solid transparent;
+  font-size: 1em;
+  width: 100%;
+}
+
+.NavigationItem a:active,
+.NavigationItem a.active {
+  border-right: 4px solid #fff;
+}
+
+// Normal mode
+@media (min-width: $bp-small) {
+  .NavigationItem {
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    width: auto;
+  }
+
+  .NavigationItem a {
+    height: 100%;
+    padding: 0px 20px;
+    font-size: $base-font-size;
+    padding: 0px $a-padding;
+    border-bottom: 4px solid transparent;
+    border-right: none;
+  }
+
+  .NavigationItem a:active,
+  .NavigationItem a.active {
+    border-bottom: 4px solid #fff;
+    border-right: none;
+  }
+}
+
+@media #{$mq-medium} {
+  .NavigationItem a {
+    font-size: $base-font-size*$m-m;
+    padding: 0px $a-padding*$m-m;
+  }
+}
+
+@media #{$mq-large} {
+  .NavigationItem a {
+    font-size: $base-font-size*$m-l;
+    padding: 0px $a-padding*$m-l;
+  }
+}
+
+@media #{$mq-xlarge} {
+  .NavigationItem a {
+    font-size: $base-font-size*$m-xl;
+    padding: 0px $a-padding*$m-xl;
+  }
+}
+
+@media #{$mq-xxlarge} {
+  .NavigationItem a {
+    font-size: $base-font-size*$m-xxl;
+    padding: 0px $a-padding*$m-xxl;
+  }
+}
+
+@media #{$mq-retina} {
+  .NavigationItem a {
+    font-size: $base-font-size*$m-r;
+    padding: 0px $a-padding*$m-r;
+  }
+}

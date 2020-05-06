@@ -1,3 +1,5 @@
+@import '../../../../utils/mediaQueries.scss';
+
 .DrawerToggle {
     width: 40px;
     height: 100%;
@@ -17,8 +19,8 @@
     background-color: #fff;
 }
 
-@media (min-width: 700px) {
-    .DrawerToggle {
-        display: none;
-    }
+@media(min-width: $bp-small) {
+  .DrawerToggle {
+    display: none;
+  }
 }

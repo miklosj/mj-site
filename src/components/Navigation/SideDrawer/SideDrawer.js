@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import NavigationItems from '../NavigationItems/NavigationItems';
-import styles from './SideDrawer.module.css';
+import styles from './SideDrawer.module.scss';
 import Aux from '../../../hoc/Aux/Aux';
 
 const SideDrawer = (props) => {
