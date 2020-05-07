@@ -22,7 +22,7 @@ const Post = ({ match }) => {
       .orderByChild('slug')
       .limitToLast(1)
       .equalTo(slug)
-      .once("value")
+      .once('value')
       .then(snapshot => {
         if (snapshot.val()) {
           for (let key in snapshot.val()) {

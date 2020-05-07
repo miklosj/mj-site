@@ -4,7 +4,7 @@
 $content-font-size: 1em;
 $date-font-size: 1.2em;
 $title-font-size: 2em;
-$top-margin: 2.8em;
+$top-margin: 10em;
 
 $m-xs: 0.8;
 $m-s: 1;
@@ -14,16 +14,15 @@ $m-xl: 1.5;
 $m-xxl: 2;
 $m-r: 3;
 
-.Post {
+.About {
   width: 90%;
   left: 0px;
   right: 0px;
   margin: $top-margin*$m-xs auto 60px auto;
   position: absolute;
   z-index: 40;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.8);
-  overflow: hidden;
 
   -webkit-animation: fadein 1s;
   -moz-animation: fadein 1s;
@@ -57,8 +56,7 @@ $m-r: 3;
   }
 }
 
-.PostContent {
-
+.AboutContent {
   $margin-top: 0.5em;
   $margin-bottom: 2em;
 
@@ -96,104 +94,24 @@ $m-r: 3;
   }
 }
 
-.PostHeader {
-  top: 0px;
-  height: calc(30vh + 10vw);
-  position: relative;
-}
-
-.PostHeaderImg {
-  width: 100%;
-  height: 100%;
+.AboutImage {
+  height: 10em;
+  width: 10em;
   object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 5px 3px 0px #333;
 }
 
-.PostDim {
-  position: absolute;
-  top: 0%;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 5%, transparent 40%);
+.AboutImageWrapper {
   display: flex;
-  flex-direction: column-reverse;
+  justify-content: center;
+  position: relative;
+  top: -5em;
+  width: 100%;
+  z-index: 50;
 }
 
-.PostTitle {
-  $margin-bottom: 0.4em;
-  $shd: 0.2em;
-
-  z-index: 60;
-  color: #fff;
-  text-shadow: $shd $shd $shd #000;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: $title-font-size;
-  text-align: left;
-  margin-bottom: $margin-bottom;
-  margin-top: 0px;
-  margin-left: 10%;
-  margin-right: 10%;
-
-  @media #{$mq-medium} {
-    font-size: $title-font-size*$m-m;
-    margin-bottom: $margin-bottom*$m-m;
-  }
-
-  @media #{$mq-large} {
-    font-size: $title-font-size*$m-l;
-    margin-bottom: $margin-bottom*$m-l;
-  }
-
-  @media #{$mq-xlarge} {
-    font-size: $title-font-size*$m-xl;
-    margin-bottom: $margin-bottom*$m-xl;
-  }
-
-  @media #{$mq-xxlarge} {
-    font-size: $title-font-size*$m-xxl;
-    margin-bottom: $margin-bottom*$m-xxl;
-  }
-
-  @media #{$mq-retina} {
-    font-size: $title-font-size*$m-r;
-    margin-bottom: $margin-bottom*$m-r;
-  }
-}
-
-.PostDate {
-  $shd: 0.2em;
-
-  z-index: 60;
-  color: #fff;
-  text-shadow: $shd $shd $shd #000;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: $date-font-size;
-  text-align: left;
-  margin-bottom: 0px;
-  margin-left: 10%;
-  margin-right: 10%;
-
-  @media #{$mq-medium} {
-    font-size: $date-font-size*$m-m;
-  }
-
-  @media #{$mq-large} {
-    font-size: $date-font-size*$m-l;
-  }
-
-  @media #{$mq-xlarge} {
-    font-size: $date-font-size*$m-xl;
-  }
-
-  @media #{$mq-xxlarge} {
-    font-size: $date-font-size*$m-xxl;
-  }
-
-  @media #{$mq-retina} {
-    font-size: $date-font-size*$m-r;
-  }
-}
-
-.PostLoading {
+.AboutLoading {
   position: absolute; 
   display: block;
   margin-top: 50vh;
@@ -202,10 +120,6 @@ $m-r: 3;
   margin-left: auto; 
   margin-right: auto; 
   z-index: 40;
-}
-
-.TopSpacer {
-  padding-top: 1em;
 }
 
 @keyframes fadein {
