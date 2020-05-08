@@ -5,6 +5,7 @@ $content-font-size: 1em;
 $date-font-size: 1.2em;
 $title-font-size: 2em;
 $top-margin: 2.8em;
+$profile-picture-size: 10em;
 
 $m-xs: 0.8;
 $m-s: 1;
@@ -18,67 +19,9 @@ $m-r: 3;
   width: 90%;
   left: 0px;
   right: 0px;
-  margin: 0 auto 60px auto;
-  position: absolute;
   z-index: 40;
-  border-radius: 0px 0px 5px 5px;
-  background-color: rgba(255, 255, 255, 0.8);
-
-  -webkit-animation: fadein 1s;
-  -moz-animation: fadein 1s;
-   -ms-animation: fadein 1s;
-    -o-animation: fadein 1s;
-       animation: fadein 1s;
-
-  @media #{$mq-small} {
-    width: 70%;
-  }
-}
-
-.AboutContent {
-  $margin-top: 5em;
-  $margin-bottom: 2em;
-
-  text-align: justify;
-  margin: $margin-top auto $margin-bottom auto;
-  width: 80%;
-  line-height: 1.5;
-  font-family: 'Ubuntu Mono', monospace;
-  overflow: hidden;
-  font-size: $content-font-size;
-
-  @media #{$mq-medium} {
-    font-size: $content-font-size*$m-m;
-    margin: $margin-top*$m-m auto $margin-bottom*$m-m auto;
-  }
-
-  @media #{$mq-large} {
-    font-size: $content-font-size*$m-l;
-    margin: $margin-top*$m-l auto $margin-bottom*$m-l auto;
-  }
-
-  @media #{$mq-xlarge} {
-    font-size: $content-font-size*$m-xl;
-    margin: $margin-top*$m-xl auto $margin-bottom*$m-xl auto;
-  }
-
-  @media #{$mq-xxlarge} {
-    font-size: $content-font-size*$m-xxl;
-    margin: $margin-top*$m-xxl auto $margin-bottom*$m-xxl auto;
-  }
-
-  @media #{$mq-retina} {
-    font-size: $content-font-size*$m-r;
-    margin: $margin-top*$m-r auto $margin-bottom*$m-r auto;
-  }
-}
-
-.AboutHeader {
-  position: relative;
-  top: 0px;
-  width: 90%;
-  height: calc(30vh + 10vw);
-  margin: $top-margin*$m-xs auto 0px auto;
+  position: absolute;
+  margin: $top-margin*$m-xs auto 60px auto;
 
   @media #{$mq-small} {
     width: 70%;
@@ -106,6 +49,59 @@ $m-r: 3;
   }
 }
 
+.AboutContentWrapper {
+  text-align: justify;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+   -ms-animation: fadein 1s;
+    -o-animation: fadein 1s;
+       animation: fadein 1s;
+}
+
+.AboutContent {
+  $margin-top: 3.5em;
+  $margin-bottom: 2em;
+
+  text-align: justify;
+  margin: $margin-top auto $margin-bottom auto;
+  width: 80%;
+  line-height: 1.5;
+  font-family: 'Ubuntu Mono', monospace;
+  overflow: hidden;
+  font-size: $content-font-size;
+
+
+  @media #{$mq-medium} {
+    font-size: $content-font-size*$m-m;
+    margin: $margin-top*$m-m auto $margin-bottom*$m-m auto;
+  }
+
+  @media #{$mq-large} {
+    font-size: $content-font-size*$m-l;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: $content-font-size*$m-xl;
+  }
+
+  @media #{$mq-xxlarge} {
+    font-size: $content-font-size*$m-xxl;
+  }
+
+  @media #{$mq-retina} {
+    font-size: $content-font-size*$m-r;
+  }
+}
+
+.AboutHeader {
+  width: 100%;
+  height: calc(20vh + 5vw);
+}
+
 .AboutHeaderImg {
   width: 100%;
   height: 100%;
@@ -113,20 +109,66 @@ $m-r: 3;
 }
 
 .AboutImage {
-  height: 10em;
-  width: 10em;
+  height: $profile-picture-size;
+  width: $profile-picture-size;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0px 5px 3px 0px #333;
+
+
+  @media #{$mq-medium} {
+    height: $profile-picture-size*$m-m;
+    width: $profile-picture-size*$m-m;
+  }
+
+  @media #{$mq-large} {
+    height: $profile-picture-size*$m-l;
+    width: $profile-picture-size*$m-l;
+  }
+
+  @media #{$mq-xlarge} {
+    height: $profile-picture-size*$m-xl;
+    width: $profile-picture-size*$m-xl;
+  }
+
+  @media #{$mq-xxlarge} {
+    height: $profile-picture-size*$m-xxl;
+    width: $profile-picture-size*$m-xxl;
+  }
+
+  @media #{$mq-retina} {
+    height: $profile-picture-size*$m-r;
+    width: $profile-picture-size*$m-r;
+  }
 }
 
 .AboutImageWrapper {
   display: flex;
   justify-content: center;
   position: relative;
-  top: -5em;
+  top: -($profile-picture-size) * 0.75;
   width: 100%;
   z-index: 50;
+
+  @media #{$mq-medium} {
+    top: -($profile-picture-size*$m-m) * 0.75;
+  }
+
+  @media #{$mq-large} {
+    top: -($profile-picture-size*$m-l) * 0.75;
+  }
+
+  @media #{$mq-xlarge} {
+    top: -($profile-picture-size*$m-xl) * 0.75;
+  }
+
+  @media #{$mq-xxlarge} {
+    top: -($profile-picture-size*$m-xxl) * 0.75;
+  }
+
+  @media #{$mq-retina} {
+    top: -($profile-picture-size*$m-r) * 0.75;
+  }
 }
 
 .AboutLoading {

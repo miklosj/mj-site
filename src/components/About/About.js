@@ -7,8 +7,10 @@ import Loading from './../UI/Loading/Loading';
 const About = ({ match }) => {
 
   const [intro, setIntro] = useState();
-  const [introImgUrl, setIntroImgUrl] = useState();
-  const [coverImgUrl, setCoverImgUrl] = useState();
+  const [imgData, setImgData] = useState({
+    introImgUrl: null,
+    coverImgUrl: null
+  });
 
   const firebase = getFirebase();
 
@@ -32,25 +34,33 @@ const About = ({ match }) => {
     .ref()
     .child('/intro')
 
-  if (!introImgUrl) {
+  if (!imgData.introImgUrl) {
     introDir
       .child('intro_picture.jpg')
       .getDownloadURL()
       .then((url) => {
-        setIntroImgUrl(url);
+        setImgData({
+          ...imgData,
+          introImgUrl: url
+        });
       });
   }
 
-  if (!coverImgUrl) {
+  if (!imgData.coverImgUrl) {
     introDir
       .child('cover_picture.png')
       .getDownloadURL()
       .then((url) => {
-        setCoverImgUrl(url);
+        setImgData({
+          ...imgData,
+          coverImgUrl: url
+        });
       });
   }
 
-  if (!intro || !introImgUrl || !coverImgUrl) {
+  const loading = !intro || !imgData.introImgUrl || !imgData.coverImgUrl;
+
+  if (loading) {
     return (
       <div className={styles.AboutLoading}>
         <Loading color="White"/>
@@ -59,15 +69,17 @@ const About = ({ match }) => {
 
   return (
     <ScrollToTop>
-      <div className={styles.AboutHeader}>
-        <img src={coverImgUrl} alt={"Header"} className={styles.AboutHeaderImg}></img>
-        <div className={styles.AboutImageWrapper}>
-          <img src={introImgUrl} alt="Profile" className={styles.AboutImage}/>
-        </div>
-      </div>
       <div className={styles.About}>
-        <div className={styles.AboutContent}>
-          {intro.content}
+        <div className={styles.AboutHeader}>
+          <img src={imgData.coverImgUrl} alt={"Header"} className={styles.AboutHeaderImg}></img>
+          <div className={styles.AboutImageWrapper}>
+            <img src={imgData.introImgUrl} alt="Profile" className={styles.AboutImage}/>
+          </div>
+        </div>
+        <div className={styles.AboutContentWrapper}>
+          <div className={styles.AboutContent}>
+            {intro.content}
+          </div>
         </div>
       </div>
     </ScrollToTop>
