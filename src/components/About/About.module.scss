@@ -4,7 +4,7 @@
 $content-font-size: 1em;
 $date-font-size: 1.2em;
 $title-font-size: 2em;
-$top-margin: 10em;
+$top-margin: 2.8em;
 
 $m-xs: 0.8;
 $m-s: 1;
@@ -18,10 +18,10 @@ $m-r: 3;
   width: 90%;
   left: 0px;
   right: 0px;
-  margin: $top-margin*$m-xs auto 60px auto;
+  margin: 0 auto 60px auto;
   position: absolute;
   z-index: 40;
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
   background-color: rgba(255, 255, 255, 0.8);
 
   -webkit-animation: fadein 1s;
@@ -32,32 +32,11 @@ $m-r: 3;
 
   @media #{$mq-small} {
     width: 70%;
-    margin-top: $top-margin*$m-s;
-  }
-
-  @media #{$mq-medium} {
-    margin-top: $top-margin*$m-m;
-  }
-
-  @media #{$mq-large} {
-    margin-top: $top-margin*$m-l;
-  }
-
-  @media #{$mq-xlarge} {
-    margin-top: $top-margin*$m-xl;
-  }
-
-  @media #{$mq-xxlarge} {
-    margin-top: $top-margin*$m-xxl;
-  }
-
-  @media #{$mq-retina} {
-    margin-top: $top-margin*$m-r;
   }
 }
 
 .AboutContent {
-  $margin-top: 0.5em;
+  $margin-top: 5em;
   $margin-bottom: 2em;
 
   text-align: justify;
@@ -92,6 +71,45 @@ $m-r: 3;
     font-size: $content-font-size*$m-r;
     margin: $margin-top*$m-r auto $margin-bottom*$m-r auto;
   }
+}
+
+.AboutHeader {
+  position: relative;
+  top: 0px;
+  width: 90%;
+  height: calc(30vh + 10vw);
+  margin: $top-margin*$m-xs auto 0px auto;
+
+  @media #{$mq-small} {
+    width: 70%;
+    margin-top: $top-margin*$m-s;
+  }
+
+  @media #{$mq-medium} {
+    margin-top: $top-margin*$m-m;
+  }
+
+  @media #{$mq-large} {
+    margin-top: $top-margin*$m-l;
+  }
+
+  @media #{$mq-xlarge} {
+    margin-top: $top-margin*$m-xl;
+  }
+
+  @media #{$mq-xxlarge} {
+    margin-top: $top-margin*$m-xxl;
+  }
+
+  @media #{$mq-retina} {
+    margin-top: $top-margin*$m-r;
+  }
+}
+
+.AboutHeaderImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .AboutImage {

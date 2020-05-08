@@ -6,14 +6,13 @@ import Loading from './../UI/Loading/Loading';
 
 const About = ({ match }) => {
 
-  const [loading, setLoading] = useState(true);
   const [intro, setIntro] = useState();
   const [introImgUrl, setIntroImgUrl] = useState();
+  const [coverImgUrl, setCoverImgUrl] = useState();
 
   const firebase = getFirebase();
 
-
-  if (loading && !intro) {
+  if (!intro) {
     firebase
       .database()
       .ref()
@@ -25,35 +24,48 @@ const About = ({ match }) => {
           introObj[key] = snapshot.val()[key];
         }
         setIntro(introObj);
-        if (introImgUrl)
-          setLoading(false);
       });
+  }
 
-    firebase
-      .storage()
-      .ref()
-      .child('/intro')
+  const introDir = firebase
+    .storage()
+    .ref()
+    .child('/intro')
+
+  if (!introImgUrl) {
+    introDir
       .child('intro_picture.jpg')
       .getDownloadURL()
       .then((url) => {
         setIntroImgUrl(url);
-        if (intro)
-          setLoading(false);
       });
   }
 
-  if (loading)
+  if (!coverImgUrl) {
+    introDir
+      .child('cover_picture.png')
+      .getDownloadURL()
+      .then((url) => {
+        setCoverImgUrl(url);
+      });
+  }
+
+  if (!intro || !introImgUrl || !coverImgUrl) {
     return (
       <div className={styles.AboutLoading}>
         <Loading color="White"/>
       </div>);
+  }
 
   return (
     <ScrollToTop>
-      <div className={styles.About}>
+      <div className={styles.AboutHeader}>
+        <img src={coverImgUrl} alt={"Header"} className={styles.AboutHeaderImg}></img>
         <div className={styles.AboutImageWrapper}>
           <img src={introImgUrl} alt="Profile" className={styles.AboutImage}/>
         </div>
+      </div>
+      <div className={styles.About}>
         <div className={styles.AboutContent}>
           {intro.content}
         </div>
