@@ -11,6 +11,8 @@ const About = ({ match }) => {
     introImgUrl: null,
     coverImgUrl: null
   });
+  const [introImgLoaded, setIntroImgLoaded] = useState(false);
+  const [coverImgLoaded, setCoverImgLoaded] = useState(false);
 
   const firebase = getFirebase();
 
@@ -69,11 +71,19 @@ const About = ({ match }) => {
 
   return (
     <ScrollToTop>
-      <div className={styles.About}>
+      <div className={introImgLoaded && coverImgLoaded ? styles.About : styles.Disabled}>
         <div className={styles.AboutHeader}>
-          <img src={imgData.coverImgUrl} alt={"Header"} className={styles.AboutHeaderImg}></img>
+          <img
+            src={imgData.coverImgUrl}
+            alt={"Header"}
+            className={styles.AboutHeaderImg}
+            onLoad={() => setCoverImgLoaded(true)}/>
           <div className={styles.AboutImageWrapper}>
-            <img src={imgData.introImgUrl} alt="Profile" className={styles.AboutImage}/>
+            <img 
+              src={imgData.introImgUrl}
+              alt="Profile" 
+              className={styles.AboutImage}
+              onLoad={() => setIntroImgLoaded(true)}/>
           </div>
         </div>
         <div className={styles.AboutContentWrapper}>
