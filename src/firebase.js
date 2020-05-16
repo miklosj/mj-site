@@ -1,5 +1,6 @@
-import firebase from 'firebase';
-//import database from 'firebase/database';
+import firebase from 'firebase/app';
+import 'firebase/database';
+import 'firebase/storage';
 
 const config = {
   apiKey: "AIzaSyCZs_zi9a1Ux62VgNhuORRO6T948TquFzo",
